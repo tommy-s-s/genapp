@@ -1,0 +1,24 @@
+  /* header */
+
+header {
+    width: 100%;
+    background-color: rgba(34,49,52,0.5);
+    position: fixed;
+    top: 0;
+    z-index: 10;  
+  }
+
+  /* footer */
+
+  footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid #eaeaea;
+    color: #777;
+  }
+
+/* universal */
+
+body {
+  padding-top: 60px;
+}
