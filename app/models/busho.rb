@@ -1,0 +1,2 @@
+class Busho < ApplicationRecord
+end

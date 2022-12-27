@@ -1,0 +1,31 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4 offset-md-3">
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr class="table-dark">
+                <th >属性</th>
+                <th >情報</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr>
+                <td ><%= "ユーザ名" %></td>
+                <td ><%= @user.name %></td>
+            </tr>
+            <tr>
+                <td ><%= "e-mail" %></td>
+                <td ><%= @user.email %></td>
+            </tr>
+            <tr>
+                <td ><%= "社員番号" %></td>
+                <td ><%= @user.emp_no %></td>
+            </tr>
+            <tr>
+                <td ><%= "入社日" %></td>
+                <td ><%= @user.join_date %></td>
+            </tr>
+        </tbody>
+    </table>
+  </aside>
+</div>
