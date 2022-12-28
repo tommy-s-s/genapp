@@ -3,3 +3,7 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 
+require("jquery")
+require("@nathanvda/cocoon")
+import './src/cocoon';
+require ("src/cocoon")
