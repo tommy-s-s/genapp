@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @busho %>
+
+<div>
+  <%= link_to "Edit this busho", edit_busho_path(@busho) %> |
+  <%= link_to "Back to bushos", bushos_path %>
+
+  <%= button_to "Destroy this busho", @busho, method: :delete %>
+</div>

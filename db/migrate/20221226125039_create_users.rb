@@ -9,8 +9,6 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.integer :emp_no
       t.boolean :admin, default: false
       t.date :join_date
-      t.integer :committee_id
-      t.integer :yakushoku_id
       t.string :liveaddress
       t.string :station
       t.bigint :salary

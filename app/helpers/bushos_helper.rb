@@ -1,0 +1,2 @@
+module BushosHelper
+end

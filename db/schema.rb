@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_26_144707) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_28_034907) do
   create_table "bushos", force: :cascade do |t|
     t.string "busho_name"
     t.datetime "created_at", null: false
@@ -23,6 +23,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_26_144707) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_bushos", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "busho_id", null: false
+    t.date "addbusho_date"
+    t.date "delbusho_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["busho_id"], name: "index_user_bushos_on_busho_id"
+    t.index ["user_id"], name: "index_user_bushos_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -31,15 +42,27 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_26_144707) do
     t.integer "emp_no"
     t.boolean "admin", default: false
     t.date "join_date"
-    t.integer "committee_id"
-    t.integer "yakushoku_id"
     t.string "liveaddress"
     t.string "station"
-    t.bigint "salary"
+    t.integer "salary"
     t.date "bh_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "committee_id"
+    t.integer "yakushoku_id"
+    t.index ["committee_id"], name: "index_users_on_committee_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["yakushoku_id"], name: "index_users_on_yakushoku_id"
   end
 
+  create_table "yakushokus", force: :cascade do |t|
+    t.string "yaku_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "user_bushos", "bushos"
+  add_foreign_key "user_bushos", "users"
+  add_foreign_key "users", "committees"
+  add_foreign_key "users", "yakushokus"
 end

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Bushos</h1>
+
+<div id="bushos">
+  <% @bushos.each do |busho| %>
+    <%= render busho %>
+    <p>
+      <%= link_to "Show this busho", busho %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New busho", new_busho_path %>

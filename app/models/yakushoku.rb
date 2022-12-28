@@ -1,0 +1,2 @@
+class Yakushoku < ApplicationRecord
+end
