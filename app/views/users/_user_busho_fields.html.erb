@@ -1,20 +1,26 @@
 <div class="nested-fields">
     <div class="field">
-                <%= f.label :busho_id, "部署" %><br>
+        <div class='form-group row'>
+            <div class='col-md-2 offset-md-3'>
+                <%= f.label :busho_id, "部署" %>
                 <%= f.collection_select :busho_id, 
-                                            Busho.all,
-                                            :id,:busho_name,
-                                            class: 'form-select'  %>
+                                        Busho.all,
+                                        :id,:busho_name,
+                                        {} , {:class => "form-control"}  %>
             </div>
+
             <div class="col-md-2">
-                <%= f.label :addbusho_date, "所属開始" %><br>
+                <%= f.label :addbusho_date, "所属開始" %>
                 <%= f.date_field :addbusho_date, class: 'form-control' %>
             </div>
+
             <div class="col-md-2">
-                <%= f.label :delbusho_date, "所属終了" %><br>
+                <%= f.label :delbusho_date, "所属終了" %>
                 <%= f.date_field :delbusho_date, class: 'form-control' %>
             </div>
             <%= link_to_remove_association "削除", f,
-                                                class: 'btn btn-danger col-md-2 ' %>
+                                                class: 'btn btn-danger col-md-1 h-25 mt-4' %>
+        </div>
     </div>
 </div>
+

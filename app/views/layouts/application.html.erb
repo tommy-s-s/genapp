@@ -9,10 +9,14 @@
     <%# jquery適用 %>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
+
+
   </head>
 
   <body id="<%= controller.controller_name %>-<%= controller.action_name %>" class="body-common">
     <%= render 'layouts/header' %>
+
 
     <div class='container'>
       <% flash.each do |message_type, message| %>

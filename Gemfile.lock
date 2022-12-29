@@ -81,6 +81,8 @@ GEM
     bootstrap-will_paginate (1.0.0)
       will_paginate
     builder (3.2.4)
+    bulma-rails (0.9.4)
+      sassc (~> 2.0)
     capybara (3.38.0)
       addressable
       matrix
@@ -281,6 +283,7 @@ DEPENDENCIES
   bootsnap
   bootstrap-sass
   bootstrap-will_paginate
+  bulma-rails
   capybara
   cocoon
   debug

@@ -1,29 +1,31 @@
+
 <%= form_with model: @user do |f| %>
     <% render 'shared/error_messages', object: f.object %>
 
     <div class='form-group row'>
-      <div class='col-md-4 offset-md-4'>
+      <div class='col-md-6 offset-md-3'>
         <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control'%>
       </div>
     </div>
 
     <div class='form-group row'>
-      <div class='col-md-4 offset-md-4'>
+      <div class='col-md-6 offset-md-3'>
         <%= f.label :email %>
         <%= f.text_field :email, class: 'form-control'%>
       </div>
     </div>
+    
 
     <div class='form-group row'>
-      <div class='col-md-4 offset-md-4'>
+      <div class='col-md-6 offset-md-3'>
         <%= f.label :emp_no, "社員番号" %>
         <%= f.number_field :emp_no, class: 'form-control' %>
       </div>
     </div>
     
     <div class='form-group row'>
-      <div class='col-md-4 offset-md-4'>
+      <div class='col-md-6 offset-md-3'>
         <%= f.label :join_date, "入社年月日" %><br>
         <%= f.date_field :join_date, class: 'form-control'  %>
       </div>
@@ -34,11 +36,11 @@
     <%= render "user_busho_fields", f: ub,
                                     class: 'btn btn-success' %>
   <% end %>
+  
   <div class="links">
     <%= link_to_add_association "部署を追加", f, :user_bushos,
-                                              class: 'btn btn-success',
+                                              class: 'btn btn-success col-md-2 offset-md-5 mt-3',
                                               data: {
-                             # data_association_insertion_traversal: 'closest',
                               force_non_association_create: true,
                               association_insertion_method: 'before' }
     %>
@@ -46,64 +48,74 @@
 
 
     <div class='form-group row'>
-      <div class='col-md-4 offset-md-4'>
+      <div class='col-md-6 offset-md-3'>
         <%= f.label :yakushoku_id, "役職" %>
-        <%= f.collection_select :yakushoku_id, Yakushoku.all, :id, :yaku_name, class: 'form-control'%>
+        <%= f.collection_select :yakushoku_id, Yakushoku.all, :id, :yaku_name, {} , {:class => "form-control"} %>
       </div>
     </div>
 
     <div class='form-group row'>
-      <div class='col-md-4 offset-md-4'>
+      <div class='col-md-6 offset-md-3'>
         <%= f.label :committee_id, "所属委員会" %>
-        <%= f.collection_select :committee_id, Committee.all, :id, :com_name, class: 'form-control' %>
+        <%= f.collection_select :committee_id, Committee.all, :id, :com_name, {} , {:class => "form-control"} %>
       </div>
     </div>
 
     <div class='form-group row'>
-      <div class='col-md-4 offset-md-4'>
+      <div class='col-md-6 offset-md-3'>
         <%= f.label :liveaddress, "住所" %><br>
         <%= f.text_field :liveaddress, class: 'form-control'  %>
       </div>
     </div>
 
     <div class='form-group row'>
-      <div class='col-md-4 offset-md-4'>
+      <div class='col-md-6 offset-md-3'>
         <%= f.label :station, "最寄り駅" %><br>
         <%= f.text_field :station, class: 'form-control'  %>
       </div>
     </div>
 
     <div class='form-group row'>
-      <div class='col-md-4 offset-md-4'>
+      <div class='col-md-6 offset-md-3'>
         <%= f.label :salary, "給料" %><br>
         <%= f.number_field :salary, class: 'form-control'  %>
       </div>
     </div>
 
     <div class='form-group row'>
-      <div class='col-md-4 offset-md-4'>
+      <div class='col-md-6 offset-md-3'>
         <%= f.label :bh_date, "誕生日" %><br>
         <%= f.date_field :bh_date, class: 'form-control'  %>
       </div>
     </div>
 
     <div class='form-group row'>
-      <div class='col-md-4 offset-md-4'>
+      <div class='col-md-6 offset-md-3'>
         <%= f.label :password %>
         <%= f.password_field :password, class: 'form-control' %>
       </div>
     </div>
 
     <div class='form-group row'>
-      <div class='col-md-4 offset-md-4'>
+      <div class='col-md-6 offset-md-3'>
         <%= f.label :password_confirmation, "Confirmation" %>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
-    </div> 
+    </div>
 
     <div class='form-group row'>
-      <div class="col-md-4 offset-md-4">
+      <div class="col-md-6 offset-md-3">
+        <%= f.label :remember_me, class: "checkbox inline" do %>
+          <%= f.check_box :remember_me %>
+          <span>Remember me on this computer</span>
+        <% end %>
+      </div>
+    </div>
+
+    <div class='form-group row'>
+      <div class="col-md-6 offset-md-3">
         <%= f.submit "submit account", class: "btn btn-primary" %>
       </div>
     </div>
 <% end %>
+
